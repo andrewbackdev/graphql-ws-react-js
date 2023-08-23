@@ -13,7 +13,7 @@ import * as ServerConfig from './config/server.js'
 import { handleLogin } from './api/auth/auth.controller.js'
 import { authMiddleware } from './api/auth/auth.middleware.js'
 
-const PORT = ServerConfig.Port
+const PORT = process.env.PORT || ServerConfig.Port
 
 const app = express()
 app.use(cors(), express.json())
