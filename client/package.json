@@ -3,17 +3,20 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "serve -s build",
+    "start:dev": "env-cmd -f envs/.env react-scripts start",
+    "build": "env-cmd -f envs/prod.env react-scripts build"
   },
   "dependencies": {
     "@apollo/client": "^3.7.11",
     "bulma": "^0.9.4",
+    "env-cmd": "^10.1.0",
     "graphql": "^16.6.0",
     "graphql-ws": "^5.12.1",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "react-scripts": "5.0.1"
