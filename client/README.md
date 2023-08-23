@@ -28,7 +28,7 @@ npm ci
 1. Start the Client:
 
 ```sh
-npm run start
+npm run start:dev
 ```
 
 2. Access the APP at the default URL: http://localhost:3000
