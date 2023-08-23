@@ -17,3 +17,18 @@ export async function createMessage(user, text) {
   await getMessageTable().insert(message)
   return message
 }
+
+export async function deleteAllMessages() {
+  return await getMessageTable().delete()
+}
+
+export async function createDefaultSystemMessage() {
+  return await getMessageTable().insert([
+    {
+      id: 'm00000000001',
+      user: 'system',
+      text: 'Welcome to the GraphQL chat!',
+      createdAt: new Date(),
+    },
+  ])
+}

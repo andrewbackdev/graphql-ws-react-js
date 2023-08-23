@@ -12,6 +12,13 @@ import { getHttpContext, getWsContext } from './app/context.js'
 import * as ServerConfig from './config/server.js'
 import { handleLogin } from './api/auth/auth.controller.js'
 import { authMiddleware } from './api/auth/auth.middleware.js'
+import { deleteAllMessages, createDefaultSystemMessage } from './db/messages.js'
+
+// Delete all messages on startup to clear local DB
+await deleteAllMessages()
+
+// Add default system message
+await createDefaultSystemMessage()
 
 const PORT = process.env.PORT || ServerConfig.Port
 
